@@ -4,19 +4,19 @@
 #include <vector>
 using namespace std;
 
-float obliczMoment(const std::vector<float>& dane, int rz¹d)
+float obliczMoment(const std::vector<float>& dane, int rzÂ¹d)
 {
     float moment = 0.0f;
     int n = dane.size();
 
     for (int i = 0; i < n; ++i) {
-        moment += pow(dane[i], rz¹d);
+        moment += pow(dane[i], rzÂ¹d);
     }
 
     moment /= n;
     return moment;
 }
-float obliczMomentCentralny(const std::vector<float>& dane,int rz¹d)
+float obliczMomentCentralny(const std::vector<float>& dane,int rzÂ¹d)
 {
     float momentZwykly1 = obliczMoment(dane, 1);
 
@@ -24,7 +24,7 @@ float obliczMomentCentralny(const std::vector<float>& dane,int rz¹d)
     int n = dane.size();
 
     for (int i = 0; i < n; ++i) {
-        momentCentralny += pow(dane[i] - momentZwykly1, rz¹d);
+        momentCentralny += pow(dane[i] - momentZwykly1, rzÂ¹d);
     }
 
     momentCentralny /= n;
@@ -65,17 +65,17 @@ int main()
 
     plik.close();
 
-    // Obliczanie momentów
+    // Obliczanie momentÃ³w
     float momentZwykly1 = obliczMoment(dane, 1);
     float momentZwykly2 = obliczMoment(dane, 2);
     float momentCentralny1 = obliczMomentCentralny(dane, 1);
     float momentCentralny2 = obliczMomentCentralny(dane, 2);
 
-    // Obliczanie odchyleñ
+    // Obliczanie odchyleÃ±
     float odchylenieStandardowe = obliczOdchylenieStandardowe(dane);
     float odchyleniePrzecietne = obliczOdchyleniePrzecietne(dane);
 
-    // Wyœwietlanie wyników
+    // WyÅ“wietlanie wynikÃ³w
     cout << "1. Momenty zwykle:\n";
     cout << "   1. rzad: " << momentZwykly1 << endl;
     cout << "   2. rzad: " << momentZwykly2 << endl;
